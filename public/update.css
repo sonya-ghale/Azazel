@@ -1,0 +1,19 @@
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    color: white;
+}
+.btn{
+    padding: 14px;
+    border-radius: 5px;
+    background-color: var(--dimergray);
+    color: white;
+    margin-left: 15%
+}
+
+.form__container{
+    margin-top: 5%;
+}

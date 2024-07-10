@@ -1,0 +1,120 @@
+{{!-- Specific story is shown writer can add, delete the data 0%========  --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/viewst.css">
+  <title>{{story.title}}</title>
+</head>
+<body class="body_container">
+
+  <nav>
+<div class="nav-bar">
+<span class="logo"><a href="/dashboard">Azazel</a></span>
+<div class="menu_dropdown">
+ <a class="dropbtn"><i class="fa fa-ellipsis-v" style="font-size:25px"></i></a> 
+   {{!-- <button class="dropbtn">Dropdown</button> --}}
+  {{!-- <div class="dropdown_content">
+<ul class="nav-link">
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/personal_info">Personal Information</a></li>
+                    <li><a href="/update">Update</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="/submissions/story_submission">Writer</a></li>
+                    {{!-- <li><a href="/something">Something</a></li> --}}
+</ul>{{!-- END OF NAV LINK --}}
+</div>END OF SUB MENU --}}
+</li>{{!-- END OF THREE DOT --}}
+</div>{{!-- end of menu --}}
+</div>{{!-- end of nav-bar --}}
+</nav>
+
+  <h2>{{story.title}}</h2><br><br>
+  
+  <div class="sabbai">  
+  <div class="story__container">
+    <div class="column1">
+      <img src="/uploads/{{story.cover_image}}" alt="Cover Image" id="imagePreview">
+    </div>
+    <div class="column2">
+      <div class="form-input-container">
+        <h4>Story details</h4><br>
+        <div class="form-group-col">
+          <label for="description">Description:</label>
+          <textarea class="des" id="description" name="description" readonly>{{story.description}}</textarea>
+        </div><br>
+
+        <div class="form-group-col">
+          <label>Genre:</label><br>
+          <input type="text" class="gen" id="genre" name="genre" value="{{story.genre}}"readonly>
+        </div><br>
+        {{#if chapters.length}} <!-- Check if there are chapters available -->
+          <h4>Chapters</h4><br>
+          {{#each chapters}}
+            <p><a href="/uploads/{{this.chapter_file}}" target="_blank">Chapter {{this.chapter_no}}</a></p>
+          {{/each}}
+        {{else}}
+          <p>No chapters available yet.</p>
+        {{/if}}<br>
+          <!-- Add button to delete the entire story -->
+              <form action="/submissions/delete_story/{{story.story_id}}" method="POST" onsubmit="return confirmDelete('story')">
+               {{!-- <input type="hidden" name="_method" value="DELETE"> --}}
+                <input type="submit" class="button" value="Delete Story">
+              </form>
+
+      </div>
+    </div>
+  </div>
+ 
+<!-- Add chapter form -->
+<div class="add">
+
+  <form action="/submissions/add_chapter/{{story.story_id}}" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="chapter_no">Chapter No to Add:</label>
+      <input type="number" id="chapter_no" name="chapter_no" required>
+    </div><br>
+    <div class="form-group">  
+      <label for="chapter_file">Chapter File:</label>
+      <input type="file" id="chapter_file" name="chapter_file" required>
+      <button class="button" type="submit">Add Chapter</button>
+    </div>
+  </form>
+
+</div>
+
+ <!-- Add button to delete the chapter -->
+<form action="/submissions/delete_chapter/{{story.story_id}}" method="POST" onsubmit="return confirmDelete('chapter')">
+  <input type="hidden" name="_method" value="DELETE">
+  <div class="form-group">
+    <label for="chapter_number">Chapter Number to Delete:</label>
+    <input type="number" id="chapter_number" name="chapter_number" required>
+    <input type="submit" class="button" value="Delete Chapter">
+  </div>
+</form>
+
+
+
+  </div>
+
+  <script>
+    function confirmDelete(type) {
+      let message;
+      if (type === 'chapter') {
+        message = "Do you really want to delete this chapter?";
+      } else if (type === 'story') {
+        message = "Do you really want to delete the entire story?";
+      } else {
+        return true; // If no type matches, allow the submission (safety fallback)
+      }
+      return confirm(message);
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+

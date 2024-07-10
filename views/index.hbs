@@ -1,0 +1,172 @@
+{{!--======================= THIS IS MY MAIN PAGE =======================--}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- ICONSCOUT 0CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google font (MONTSERRAT) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> --}}
+    <link rel="stylesheet" href="/style.css">
+<script defer src="/scripts/scroll.js"></script>
+    <title>Index page</title>
+</head>
+<body class="body_container">
+         <!-- navigation bar start -->
+      <nav>
+<div class="nav-bar">
+<span class="logo"><a href="/">Azazel</a></span>
+<div class="menu borderXwidth">
+  <ul class="nav-link"> 
+    <li><a href="/">Home</a></li>
+    <li><a href="/contact_us">Contact Us</a></li>
+    <li><a href="/about_us">About Us</a></li>
+    <li><a href="/privacy_policy">Privacy Policy</a></li>
+  </ul>
+</div><!-- end of menu -->
+<div class="buttons">
+<a href="/login"> <button class="btn-btn">Login </button></a>
+<a href="/register"> <button class="btn-btn">Registration</button></a> 
+</div>
+</div><!-- end of nav-bar -->
+</nav>
+<!-- navigation bar end -->
+
+<div class="test_carosel">
+  <div class="side">
+<div class="adjustment">
+<div class="slider">
+<div class="slides">
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+     <!--radio button slide image  -->
+ <div class="slide first">
+      <img src="/assests/pumpkin-night.jpg" alt="">
+     </div>
+     <div class="slide">
+      <img src="/assests/heavenOB.jpg" alt="">
+     </div>
+  <div class="slide">
+      <img src="/assests/ironblood.png" alt="">
+     </div> 
+
+       <!-- automatic navigation -->
+     <div class="navigation-auto">
+     <div class="auto-btn1"></div>
+     <div class="auto-btn2"></div>
+     <div class="auto-btn3"></div>
+    </div>
+   </div>{{!-- END OF SLIDES --}}
+
+  <!-- manual navigation start -->
+    <div class="navigation-manual"> 
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+    </div>
+    <!-- manual navigation end -->
+  </div>
+
+ <div class="text">
+      <h2 class="title"> 
+        <span class="fancy">Explore</span> <br>
+         <span class="magic-text">world's through stories </span>  
+      </h2>
+      <div class="container_message">
+  <p>AZAZEL a site to make your story come true. Our website hopes you to have a best experience while browsing our website.
+  Lets's open your world of imagination!!<br>
+   </p>
+      </div>
+    </div>
+
+</div>{{!-- END OF SLIDER --}}
+</div>{{!-- END OF ADJUSTMENT --}}
+  </div> {{!-- END OF SIDE --}}
+</div> {{!-- END OF TEST_CAROSEL --}}
+<script>
+  var counter = 1;
+setInterval(function(){
+    document.getElementById('radio' + counter).checked = true;
+    counter++;
+    if(counter > 3){
+        counter = 1;
+    }
+},4000
+);
+</script>
+<div class="border__line">
+</div>
+
+{{!-- ===================START OF FOOTER ============================= --}}
+<footer>
+  <div class="footer__index">
+
+      <section class="hidden">
+    <div class="footer__socials" style="margin-top: -20vh;">
+<p> <b> Share to your Friends</b></p>
+<div class="footer__share">
+  <a href="https://youtube.com/" target="blank" class="youtube"><i class="fa fa-youtube-play" style="font-size:22px;"></i></a>
+        <a href="https://instagram.com/" target="blank" class="instagram"><i class="fa fa-instagram" style="font-size:22px"></i></a>
+        <a href="https://facebook.com/" target="blank" class="facebook"><i class="fa fa-facebook-f" style="font-size:22px"></i></a>
+        <a href="https://twitter.com/" target="blank" class="twitter"><i class="fa fa-twitter" style="font-size:22px"></i></a>
+    </div>  {{!-- END OF FOOTER__SHARE --}}
+    </div>{{!-- END OF FOOTER__SOCIALS --}}
+    </section>
+
+      <section class="hidden">
+    <div class="footer__text">
+          <p>Ebooks have revolutionized the way we engage with stories, novels, and manga. With the advent of digital reading, avid readers now have access
+         to a vast library of literature at their fingertips. <br> <br>
+Whether you are a fan of classic tales, contemporary
+ novels, or captivating manga series, ebooks offer a convenient and immersive reading experience.</p>
+       </div> {{!-- END OF FOOTER__TEXT --}}
+       </section>
+
+              <section class="hidden">
+                <div class="all_creator">
+            <h4>Creator's</h4> 
+            <div class="creator">
+            <div class="paragraph">
+            <p>We are the creator of this website. We really hope the user to have best experience for reading and posting stories.</p>
+            </div>
+            <ul class="us">
+               <li><img src="/assests/shoyo.jpg" height="90px" width="90px"><br> Avishek Paudel</li>
+               <li><img src="/assests/kenma.jpg" height="90px" width="90px"><br> Soniya Ghale</li>
+            </ul>
+            </div>{{!-- END OF CREATOR --}}
+            </div>
+            </section>
+
+
+  <section class="hidden">
+    <div class="footer__link">
+            <ul class="link__style">
+                <li><a href="/">Home</a></li>
+                <li><a href="/contact_us">Contact Us</a></li>
+                <li><a href="/about_us">About Us</a></li>
+                <li><a href="/privacy_policy">Privacy Policy</a></li>
+            </ul>
+</div>{{!-- END OF FOOTER__LINK --}}
+            </section>
+     </div>{{!-- END OF FOOTER__INDEX --}}
+
+</footer>
+
+
+<div class="footer__copyright">
+  <footer>
+    <small>Copyright &copy; Azazel </small>
+    <p> Read novels, books
+        online</p>
+  </footer> 
+</div>
+
+{{!-- ===================END OF FOOTER ============================= --}}
+</body>
+</html>
+

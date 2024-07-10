@@ -1,0 +1,237 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+:root{
+  --white: white;
+--black: #000000;
+--jetblack: #2C2C2C;
+--blackolive:#3B3C36;
+--blackcoffee: #3B2F2F;
+--blackcrow: #0D0907;
+--xiketic: #1D0002;
+--granite: #666362;
+--blacksand: #5B4E4B;
+  margin-bottom: 10rem;
+  --dimgray: #696969;
+  --dimergray: #9c9292;
+--davysgray: #555555;
+
+--darker:#00308F;
+--dark:#007FFF;
+--light: #89cff0;
+--blue: rgb(107, 214, 232);
+
+}
+
+body{
+background-color: var(--jetblack);
+overflow-x: hidden;
+}
+/* Whole navigation bar of dashboard */
+nav{
+      height: 75px;
+    width: 100%;
+margin-bottom: 50px;
+position: absolute;
+background-color: var(--blackcrow);
+}
+div.nav-bar{
+    text-align: center;
+}
+nav, .nav-bar{
+    display: flex;
+    margin: none;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    float: right;
+z-index: 10;
+  position: relative;
+ top: -2px;
+ margin-left: -10px;
+border-style: none;
+cursor: pointer;
+transition: 0.3s;
+}
+nav .nav-bar .logo a{
+    font-size: 23px;
+    font-weight: bolder;
+    color: var(--white);
+    text-decoration: none;
+    }
+            .nav-bar .nav-link li{
+          margin: 0 5px;
+          list-style: none;
+        }
+        .nav-bar .nav-link a{
+          color: var(--white);
+          font-size: bold;
+          border: 0.5px solid white;
+        }   
+        .logo{
+          margin-top: 10px;
+          text-transform: uppercase;
+        }
+.dropbtn{
+  color: var(--white);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  margin-left: 60rem;
+}
+.menu_dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  margin-left: 50rem;
+  min-width: 160px;
+  
+  z-index: 1;
+}
+.dropdown_content a {
+  background-color: var(--dimgray);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown_content a:hover {
+  background-color: var(--dimergray);
+}
+.menu_dropdown:hover .dropdown_content{
+display: block;
+}
+.menu_dropdown:hover .dropbtn{
+  display: block;
+  }
+
+  .container{
+    display: flex;
+  }
+  .card{
+    height: 380px;
+    margin-left: 40px;
+    margin-top: 100px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+  }
+  img{
+    height: 500px;
+    width: 350px;
+    border-radius: 3px;
+  }
+  .intro{
+    height: 200px;
+    width: 335px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 5px;
+    background: rgb(27, 27, 27, .5);
+    color: white;
+    transition: .5s;
+  }
+  h1{
+    margin: 10px;
+    font-size: 40px;
+  }
+  p{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .card:hover{
+    cursor: pointer;
+  }
+  .card:hover .intro{
+    height: 220px;
+    /* bottom: 240px; */
+    background: black;
+  }
+  .card:hover p{
+    opacity: 1;
+    visibility: visible;
+  }
+  .card:hover img{
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+
+  .footer__copyright{
+    text-align: center;
+    /* padding: 1rem 0; */
+    border-top: 2px solid var(--white);
+    /* margin-top: -7rem; */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+  }
+  
+  /*=============================== DASHBOARD CAROSEL======================= */
+  .big_carousel {   
+    position: relative;
+    height: 400px;
+    width: fit-content;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+  }
+  
+  .carousel-item {
+    display: none;
+    margin-top: 1.5em;
+    position: absolute;
+    /* position: fixed; */
+    top: 0;
+    overflow: hidden;
+    left: 0;
+  }
+  
+  .carousel-item.active {
+    display: block;
+  }
+  img{
+    width: fit-content;
+  }
+
+  
+.search-container {
+    float: right;
+    display: flex; /* Add display flex to align input and button */
+    align-items: center; /* Vertically center items within the container */
+  }
+  
+  .search-input {
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    margin-right: 10px;
+  }
+  
+  .search-button {
+    padding: 6px 10px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background: #ccc;
+  }
+
+
+ 
+
+

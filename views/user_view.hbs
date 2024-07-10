@@ -1,0 +1,49 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/story_view.css">
+  <title>{{story.title}}</title>
+</head>
+<body style="background-color:#5B4E4B;">
+
+<div class="whole__container" style="color: white;">
+
+  <div class="info">
+            <h2 style="margin-left:45%">{{story.title}}</h2>
+        <div class="labelContainer" style="margin-left: 40%;">
+              <img src="/uploads/{{story.cover_image}}" alt="Cover Image" style="height: 450px; width:380px;">
+        </div><br>
+        <div class="labelContainer" style="margin-left:35%">
+                  <label for="description" style="font-size: 30px;">Description:</label><br><br>
+                  {{story.description}}
+                </div><br>{{!-- END OF LABEL CONTAINER --}}
+        <div class="labelContainer" style="margin-left:35%">
+                  <label style="font-size: 30px;">Genre:</label><br><br>
+                  {{story.genre}}
+                </div> <br>
+              <div class="labelContainer" style="margin-left:35%">
+                  <label style="font-size: 30px;">Author:</label><br><br>
+                  {{story.username}}
+                </div>
+  </div>
+
+  <div class="chapter__container">
+  {{#if chapters.length}}
+<h4 style="margin-left:45% ; font-size: 30px;">All Chapters</h4>
+<div class="first" style="margin-left:45%"> 
+          {{#each chapters}}
+            <p style="margin-top: 10px; margin-bottom:10px; text-decoration:none"><a href="/uploads/{{this.chapter_file}}" target="_blank" class="entry" style="color: white;"> Chapter {{this.chapter_no}}</a></p>
+          {{/each}}
+        {{else}}
+          <p>No chapters available yet.</p>
+        {{/if}}
+        </div>
+  </div>{{!-- END OF CHAPTER__CONTAINER --}}
+ </div>
+{{!-- END OF WHOLE__CONTAINER --}}
+
+
+</body>
+</html>

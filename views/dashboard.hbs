@@ -1,0 +1,122 @@
+{{!--======================= THIS IS MY after LOGINPAGE =======================--}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://kit.fontawesome.com/43dcc20e7a.js" crossorigin="anonymous"></script>
+   
+
+    <link rel="stylesheet" href="/dashboard.css">
+    <link rel="stylesheet" href="/dashimage.css">
+    <title>Dashboard</title>
+ 
+</head>
+<body>
+   {{!-- navigation bar start --}}
+<nav>
+<div class="nav-bar">
+<span class="logo"><a href="/">Azazel</a></span>
+
+<div class="search-bar">
+  <form action="/submissions/search_results" method="GET" class="search-form">
+  <input type="text" name="q" id="search-query" class="search-input" placeholder="Search for stories...">
+  <button type="submit" class="search-button">
+        <i class="fas fa-search"></i>
+  </button>
+</form>
+</div>
+
+<div class="menu_dropdown">
+ <a class="dropbtn"><i class="fa fa-ellipsis-v" style="font-size:25px"></i></a> 
+  <div class="dropdown_content">
+<ul class="nav-link">
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/personal_info">Personal Information</a></li>
+                    <li><a href="/update">Update</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="/submissions/story_submission">Writer</a></li>
+                    {{!-- <li><a href="/something">Something</a></li> --}}
+</ul>{{!-- END OF NAV LINK --}}
+</div>{{!-- END OF SUB MENU --}}
+</li>{{!-- END OF THREE DOT --}}
+
+</div>{{!-- end of menu --}}
+</div>{{!-- end of nav-bar --}}
+</nav><br><br><br>
+
+
+
+
+<div class="big_carosel" id="carouselExample" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+<div class="carousel-item">
+        <img src="assests/Bluelock.jpg" class="carosel_image" style="height: 600px; width:1920px;">
+</div>
+<div class="carousel-item">
+        <img src="assests/19days.jpg" class="carosel_image" style="height: 600px; width:1920px;">
+</div>
+<div class="carousel-item">
+        <img src="assests/reaper.jpg" class="carosel_image" style="height: 600px; width: 1920px;">
+</div>
+
+<div class="carousel-item">
+        <img src="assests/Sclass.jpg" class="carosel_image" style="height: 600px; width: 1920px;">
+</div>
+<div class="carousel-item">
+        <img src="assests/junjiito.jpg" class="carosel_image" style="height: 600px; width: 1920px;">
+</div>
+<div class="carousel-item">
+        <img src="assests/book.jpg" class="carosel_image" style="height: 600px; width:1920px;">
+</div>
+  </div>{{!--END OF CAROUSEL-INNER  --}}
+ <script src="/scripts/carousel.js"></script>
+</div>{{!-- END OF BIG_CAROSEL --}}
+
+  <div class="container__stories">
+     <h2>Stories</h2>
+  {{#if submittedStories.length}}
+<div class="another__holder">
+  <h2 style="color: white;margin-top:-1.5rem;margin-bottom:2rem;">Current Stories:</h2>
+    <div class="holder">
+    {{#each submittedStories}}
+          <div class="card">
+            <a href="/submissions/view_user/{{this.story_id}}">
+          <img src="/uploads/{{this.cover_image}}" alt="Card Image">
+              <div class="intro">
+                <h3>{{this.title}}</h3>
+                <p>{{this.username}}</p>
+                <p>{{this.description}}</p>
+                <p>{{this.genre}}</p>
+                    {{!-- <p><a href="/uploads/{{this.story_file}}" target="_blank">file</a></p> --}}
+                </div>{{!-- END OF INTRO --}}
+                </a>
+          </div>{{!-- END OF CARD --}}
+    {{/each}}
+  {{else}}
+    <p>No stories submitted yet.</p>
+  {{/if}}
+      </div>{{!-- END OF HOLDER --}}
+  </div>{{!-- END OF ANOTHER__HOLDER --}}
+</div>{{!-- END OF STORIES_CONTAINER --}}
+
+
+
+<div class="footer__copyright">
+  <footer>
+    <small>Copyright &copy; Azazel </small>
+    <p style="color: white;"> Read novels, books
+        online</p>
+  </footer>
+    </div>
+  </div>
+{{!-- END OF FOOTER INDEX --}}
+
+</body>
+</html>
+
+
+   

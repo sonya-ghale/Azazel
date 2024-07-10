@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+  }
+  :root{
+    --white: white;
+  --black: #000000;
+  --jetblack: #2C2C2C;
+  --blackolive:#3B3C36;
+  --blackcoffee: #3B2F2F;
+  --blackcrow: #0D0907;
+  --xiketic: #1D0002;
+  --granite: #666362;
+  --blacksand: #5B4E4B;
+    margin-bottom: 10rem;
+    --dimgray: #696969;
+    --dimergray: #9c9292;
+  --davysgray: #555555;
+  
+  --darker:#00308F;
+  --dark:#007FFF;
+  --light: #89cff0;
+  --blue: rgb(107, 214, 232);
+  
+  }
+body{
+background-color: var(--jetblack);
+}
+  .personal__container{
+    background-color: var(--dimgray);
+    text-align: center;
+    width: 600px;
+    margin-top: 4%;
+    margin-left: 28%;
+    height: 500px;
+  }
+  .small-container{
+    color: white;
+    border-style: solid;
+    border-width: 1px;
+    text-align: start;
+    padding: 2%;
+    border-radius: 10px;
+  }
+  button{
+    border-radius: 5px;
+    padding: .4%;
+    border-width: 1px;
+  }
+  p{
+    color: white;
+    border: solid;
+    border-width: 0 0 1px 0;
+    border-bottom: 2px, black; 
+  }
+  h2{
+    color: white;
+  }
+  h4{
+    color: white;
+  }

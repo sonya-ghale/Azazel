@@ -1,0 +1,71 @@
+{{!-- ============================UPDATE USER INFORMATION=================================== --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/update.css">
+    <link rel="stylesheet" href="/login.css">
+    <title>Reset page</title>
+</head>
+<body>
+  
+<div class="form__container">
+  <div class="card">
+    <h1>Update Personal Information</h1>
+    <div class="card-body">
+
+      <form action="/auth/update" method="POST" onsubmit="return confirmUpdate()">
+        <div class="form-group">
+          <label for="new_name">New Username</label><br>
+          <input id="new_name" class="form-control" name="new_name" type="text" placeholder="" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+          <label for="new_phone">New Phone number</label><br>
+          <input id="new_phone" class="form-control" name="new_phone" type="phone" placeholder="" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+          <label for="current_password">Current Password</label><br>
+          <input id="current_password" class="form-control" name="current_password" type="password" placeholder="" required>
+        </div>
+
+        <div class="form-group">
+          <label for="new_password">New Password</label><br>
+          <input id="new_password" class="form-control" name="new_password" type="password" placeholder="">
+        </div>
+
+        <div class="form-group">
+          <label for="repeat_password">Confirm Password</label><br>
+          <input id="repeat_password" class="form-control" name="repeat_password" type="password" placeholder="">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Edit Information</button>
+
+        <a href="/dashboard"><input type="button" value="Back" class="back"></a>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{#if message}}
+<div class="alert alert-success">{{message}}</div>
+{{/if}}
+
+{{#if errors}}
+<div class="alert alert-danger">
+  {{#each errors}}
+  <p>{{this.message}}</p>
+  {{/each}}
+</div>
+{{/if}}
+
+  <script>
+    function confirmUpdate() {
+      return confirm("Do you really want to update your personal information?");
+    }
+  </script>
+</body>
+
+</html>

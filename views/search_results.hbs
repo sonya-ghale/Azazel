@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+     <link rel="stylesheet" href="/searchResults.css">
+       <script src="https://kit.fontawesome.com/43dcc20e7a.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+   {{!-- navigation bar start --}}
+<nav>
+<div class="nav-bar">
+<span class="logo"><a href="/">Azazel</a></span>
+
+<div class="search-bar">
+  <form action="/submissions/search_results" method="GET" class="search-form">
+  <input type="text" name="q" id="search-query" class="search-input" placeholder="Search for stories...">
+  <button type="submit" class="search-button">
+        <i class="fas fa-search"></i>
+  </button>
+</form>
+</div>
+
+
+<div class="menu_dropdown">
+ <a class="dropbtn"><i class="fa fa-ellipsis-v" style="font-size:25px"></i></a> 
+  <div class="dropdown_content">
+<ul class="nav-link">
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/personal_info">Personal Information</a></li>
+                    <li><a href="/update">Update</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="/submissions/story_submission">Writer</a></li>
+</ul>{{!-- END OF NAV LINK --}}
+</div>{{!-- END OF SUB MENU --}}
+</li>{{!-- END OF THREE DOT --}}
+
+</div>{{!-- end of menu --}}
+</div>{{!-- end of nav-bar --}}
+</nav>
+
+
+
+    <div class="container__stories">
+ {{#if submittedStories.length}}
+<div class="another__holder">
+  <h2 style="color: white;margin-top:-1.5rem;margin-bottom:2rem;">Searched Results</h2>
+<div class="holder">
+      {{#each submittedStories}}
+<div class="card">
+  <a href="/submissions/view_user/{{this.story_id}}">
+          <img src="/uploads/{{cover_image}}" alt="Card Image">
+      <div class="intro">
+        <h3>{{ title }}</h3>
+          <p>{{ username }}</p>
+          <p>{{ description }}</p>
+          <p>{{ genre }}</p>
+      </div>{{!-- END OF INTRO --}}
+  </a>
+</div>{{!-- END OF CARD --}}
+   {{/each}}
+  {{else}}
+    <p  class="no-stories">No stories found for '{{ searchTerm }}'.</p>
+  {{/if}}
+</div>{{!-- END OF HOLDER --}}
+</div>{{!-- END OF ANOTHER__HOLDER --}}
+</div>{{!--END OF CONTAINER_STORIES --}}   
+
+</body>
+</html>
+

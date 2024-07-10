@@ -1,0 +1,87 @@
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  phone VARCHAR(20),
+  password VARCHAR(255) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE submissions (
+  story_id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  genre VARCHAR(255) NOT NULL,
+  username VARCHAR(255) NOT NULL,
+  user_id INT NOT NULL,
+  cover_image VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT `chk_cover_image` CHECK (cover_image LIKE '%.jpg' OR cover_image LIKE '%.jpeg' OR cover_image LIKE '%.png'),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE chapters (
+  chapter_id INT PRIMARY KEY AUTO_INCREMENT,
+  story_id INT NOT NULL,
+  chapter_no INT NOT NULL,
+  chapter_file VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (story_id) REFERENCES submissions (story_id)
+);
+
+
+chapter INT NOT NULL,
+  story_file VARCHAR(255) NOT NULL,
+
+file structure
+- controllers
+ * auth.js
+ * submissions.js
+- node-modules
+- public
+ * assests
+ *chapters
+ * scripts
+ * uploads
+   - pdf/images
+  1. carousel.js
+  2. scroll.js
+ * uploads
+ * dashboard.css
+ * login.css
+ * style.css
+- routes
+ * auth.js
+ * pages.js
+ * submissions.js
+- views
+ * nav-bar
+  1. about_us.hbs
+  2. contact_us.hbs
+  3. privacy_policy.hbs
+ * collection.hbs 
+ * dashboard.hbs
+ * index.hbs
+ * login.hbs
+ * personal_info.hbs
+ * register.hbs
+ * search_results.hbs
+ * story_submission.hbs
+ * update_storyDetails.hbs
+ * update.hbs
+ *view_story.hbs
+- app.js
+- db.js    
+
+CREATE TABLE comments (
+  commeter_id INT AUTO_INCREMENT PRIMARY KEY,
+  comment TEXT,
+  id INT,
+  FOREIGN KEY (id) REFERENCES users(id)
+);
+ALTER TABLE comments
+ADD username VARCHAR(255),
+ADD email VARCHAR(255),
+ADD created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;

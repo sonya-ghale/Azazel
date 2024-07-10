@@ -1,0 +1,141 @@
+{{!-- =============================WRITER SUBMISSION --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="/storysub.css">
+  {{!-- <link rel="stylesheet" href="/dashboard.css"> --}}
+  <title>Story Submission</title>
+</head>
+<body class="body_container">
+
+<nav>
+<div class="nav-bar">
+<span class="logo"><a href="/dashboard">Azazel</a></span>
+<div class="menu_dropdown">
+ <a class="dropbtn"><i class="fa fa-ellipsis-v" style="font-size:25px"></i></a> 
+   {{!-- <button class="dropbtn">Dropdown</button> --}}
+  {{!-- <div class="dropdown_content">
+<ul class="nav-link">
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/personal_info">Personal Information</a></li>
+                    <li><a href="/update">Update</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="/submissions/story_submission">Writer</a></li>
+                    {{!-- <li><a href="/something">Something</a></li> --}}
+</ul>{{!-- END OF NAV LINK --}}
+</div>END OF SUB MENU --}}
+</li>{{!-- END OF THREE DOT --}}
+</div>{{!-- end of menu --}}
+</div>{{!-- end of nav-bar --}}
+</nav>
+
+  <h2>Story Submission</h2>
+<div class="whole__container">
+     <div class="menu">
+                <ul class="nav-link">
+                  {{!-- <input type="button" value="New"> --}}
+                    <li><a href="/collection">Collection</a></li>
+                </ul>
+            </div>
+
+<form action="/submissions/story_submission" method="POST" enctype="multipart/form-data">
+
+<div class="story__container">
+
+      <div class="column1">
+        <div class="file-input-container">
+          <div class="form-groupimg">
+            <input type="file" name="cover_image" id="uploadImg" accept="image/png, image/jpeg" onchange="handleFileInputChange()">
+          </div>
+          <div id="imagePreview">
+          </div>{{!-- END OF IMAGEPREVIEW --}}
+        </div>{{!-- END FILE-INPUT-CONTAINER --}}
+      </div>{{!-- END OF COLUMN1 --}}
+
+<div class="column2">
+  <div class="form-input-container">
+    <h4>Story details</h4>
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+          </div>
+
+                    <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+          </div>
+
+                    <div class="form-group">
+            <label>Genre:</label>
+            <input type="text" id="genre" name="genre">
+          </div>
+
+          {{!-- <div class="form-group">
+            <label for="chapter">Chapter</label>
+            <input type="number" id="chapterInput" name="chapter">
+          </div> --}}
+
+                    {{!-- <div class="form-group file-input">
+            <label for="story-file">Upload Story:</label>
+            <input type="file" id="story-file" name="story_file">
+          </div> --}}
+
+            <div class="form-group username-input">
+                <label for="username">Author Name:</label>
+                <input type="text" id="username" name="username">
+            </div>
+
+  </div>{{!-- END OF FORM-INPUT-CONTAINER --}}
+</div>{{!-- END OF COLUMN2 --}}
+
+</div>{{!-- END OF STORY__CONTAINER --}}
+
+ {{!-- <input type="submit" value="View" name="view" class="btn btn-primary"> --}}
+<p class="text-msg"> Submit your story to us!!
+ <input type="submit" value="Submit" name="submit" class="btnbtn-primary">
+</p>   
+
+</form>{{!-- END OF FORM --}}
+
+<div style="margin-left:34%;color:white;margin-top:20px;">
+{{#if errorMsg}}
+<div class="alert alert-danger">
+  {{errorMsg}}
+</div>
+{{/if}}
+</div>
+
+  </div>
+<script>
+  // Function to preview the selected cover image
+  function handleFileInputChange() {
+    const fileInput = document.getElementById('uploadImg');
+    const imagePreview = document.getElementById('imagePreview');
+
+    if (fileInput.files && fileInput.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function (e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        imagePreview.innerHTML = ''; // Clear any previous image
+        imagePreview.appendChild(img);
+      };
+
+      reader.readAsDataURL(fileInput.files[0]);
+    }
+  }
+</script>
+
+
+  </div>{{!-- end of whole__container --}}
+
+</body>
+</html>
+
+
+
+

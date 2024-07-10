@@ -1,0 +1,57 @@
+{{!-- =====================USER'S PERSONAL INFO=============================== --}}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="/personal_info.css">
+  <title>Personal Information</title>
+</head>
+<body>
+  <div class="personal__container">
+    <h4>Personal Information</h4>
+  <div class="container">
+  <h4>Hello!  {{userData.username}}</h4>
+    {{#if userData.username}}
+    <div class="small-container">
+      <p><b>Username:</b> &nbsp;&nbsp;&nbsp;&nbsp; {{userData.username}}</p>
+    {{/if}}
+    {{#if userData.email}}
+      <p><b>Email:</b>&nbsp;&nbsp;&nbsp;&nbsp;  {{userData.email}}</p>
+    {{/if}}
+    {{#if userData.phone}}
+      <p><b>Phone:</b>&nbsp;&nbsp;&nbsp;&nbsp;  {{userData.phone}}</p>
+    {{/if}}
+    {{#if userData.password}}
+      <p><b>Password:</b>&nbsp;&nbsp;&nbsp;&nbsp;  {{userData.password}}</p>
+    {{/if}}
+    <h4>This is users personal information. User can edit, update there user data too if needed.</h4><br>
+    
+      <a href="/update"><button>Update</button></a>
+   </div> {{!-- END OF SMALL-CONTAINER --}}
+
+
+  </div>{{!-- END OF CONATINER --}}
+   </div>{{!-- END OF  PERSONAL__CONTAINER--}}
+</body>
+</html>
+
+
+
+   {{!-- <h3>Hello!!  {{userData.username}}</h3>
+    {{#if userData.username}}
+      <p>Username: {{userData.username}}</p>
+    {{/if}}
+    {{#if userData.email}}
+      <p>Email: {{userData.email}}</p>
+    {{/if}}
+    {{#if userData.phone}}
+      <p>Phone: {{userData.phone}}</p>
+    {{/if}}
+    {{#if userData.password}}
+      <p>Password: {{userData.password}}</p>
+    {{/if}}
+<h4>This is users personal information. User can edit, update there user data too if needed.</h4>
+  --}}

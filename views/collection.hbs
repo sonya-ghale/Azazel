@@ -1,0 +1,72 @@
+{{!--======================= THIS IS MY COLLECTION PAGE FOR WRITER =======================--}}
+{{!--======================================= pending======================== --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dashboard.css">
+<link rel="stylesheet" href="/collection.css">
+    <title>Collection_writer_only</title>
+</head>
+<body>
+
+   {{!-- navigation bar start --}}
+<nav>
+<div class="nav-bar">
+<span class="logo"><a href="/dashboard">Azazel</a></span>
+<div class="menu_dropdown">
+ <a class="dropbtn"><i class="fa fa-ellipsis-v" style="font-size:25px"></i></a> 
+   {{!-- <button class="dropbtn">Dropdown</button> --}}
+  <div class="dropdown_content">
+<ul class="nav-link">
+                    <li><a href="/dashboard">Home</a></li>
+                    <li><a href="/personal_info">Personal Information</a></li>
+                    <li><a href="/update">Update</a></li>
+                    <li><a href="/auth/logout">Logout</a></li>
+                    <li><a href="/submissions/story_submission">Writer</a></li>
+                    {{!-- <li><a href="/something">Something</a></li> --}}
+</ul>{{!-- END OF NAV LINK --}}
+</div>{{!-- END OF SUB MENU --}}
+</li>{{!-- END OF THREE DOT --}}
+</div>{{!-- end of menu --}}
+</div>{{!-- end of nav-bar --}}
+</nav>
+
+<div class="container__stories">
+       {{#if submittedStories.length}}
+            <h2>Your Submitted Stories:</h2>
+            <div class="another__holder">
+  <h2 style="color: white;margin-top:-1.5rem;margin-bottom:2rem;">Submitted Stories:</h2>
+<div class="holder">
+            {{#each submittedStories}}
+<div class="card"> 
+    <a href="/submissions/view/{{this.story_id}}">
+<img src="/uploads/{{this.cover_image}}" alt="Cover Image">
+<div class="intro">
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.username}}</p>
+                    <p>{{this.description}}</p>
+                    <p>{{this.genre}}</p>
+                    {{!-- <p><a href="/uploads/{{this.story_file}}" target="_blank">file</a></p> --}}
+</div>{{!-- END OF INTRO --}}
+</a>
+</div>{{!-- END OF CARD --}}
+   {{/each}}
+        {{else}}
+            <p>No stories submitted yet.</p>
+        {{/if}}
+</div>{{!-- END OF HOLDER --}}
+ </div>{{!-- END OF ANOTHER__HOLDER --}}
+</div>{{!-- END OF STORIES_CONTAINER --}}
+
+<footer class="foooter__dash">
+<div class="dash__copyright">
+    <small>Copyright &copy; Azazel </small>
+    <p> Read novels, books
+        online</p>
+</div>
+
+</body>
+</html>

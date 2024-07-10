@@ -1,0 +1,86 @@
+  /* =================== STORY SUBMISSION CONTAINER==================================== */
+
+.container__stories {
+  margin-top: 5px;  
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  /* position: relative; */
+}
+.card {
+  /* margin: 10px; */
+  width: 240px;
+  /* margin-top: 12rem; */
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  /* margin-right: 3rem; */
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.another__holder{
+  /* margin-top: 43rem; */
+  margin-top: 8rem;
+  margin-left: -4rem;
+  margin-bottom: 4rem;
+}
+.holder{
+  /* margin-top: 33rem; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four items per row */
+grid-auto-rows: 1fr;
+  grid-gap: 2px; /* Add gap between cards */
+   /* Add some margin at the bottom of each row */
+}
+h2{
+color: transparent;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card .intro {
+  padding: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Adjust the value for the hovering effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+p{
+  color: white;
+  font-size: 19px;
+}
+
+.card:hover .intro{
+  height: 130px;
+  margin-top: -4px;
+   /* bottom: 140px; */
+  background: rgb(102, 97, 97);
+}
+.card:hover p{
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer__dash{
+  margin-top: 5rem;
+margin-left: 200px;
+  width: 800px;
+  /* min-height: 10px; */
+  overflow: hidden;
+  color: var(--white);
+  font-size: 18px;
+}
+.dash__copyright{
+  text-align: center;
+  border-top: 2px solid var(--white);
+  color: white;
+  overflow: hidden;
+  font-weight: bold;
+}
+
